@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String buttonName = 'Login';
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +24,12 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: ElevatedButton(
-            onPressed: () {},
-            child: const Text('Login'),
+            onPressed: () {
+              setState(() {
+                buttonName = 'Logged In';
+              });
+            },
+            child: Text(buttonName),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
