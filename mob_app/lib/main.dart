@@ -13,9 +13,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Ceylonese'),
+          title: const Text('Ceylonese'),
         ),
-        body: Text('Body'),
+        body: const Text('Body'),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home),
+            ),
+            BottomNavigationBarItem(
+                label: 'Settings', icon: Icon(Icons.settings))
+          ],
+        ),
       ),
     );
   }
