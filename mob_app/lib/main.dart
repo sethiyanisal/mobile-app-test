@@ -13,6 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String buttonName = 'Login';
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,12 @@ class _MyAppState extends State<MyApp> {
               icon: Icon(Icons.settings),
             )
           ],
+          currentIndex: currentIndex,
+          onTap: (int index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
         ),
       ),
     );
