@@ -15,7 +15,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Ceylonese'),
         ),
-        body: const Text('Body'),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {},
+            child: const Text('Login'),
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
@@ -23,7 +28,9 @@ class MyApp extends StatelessWidget {
               icon: Icon(Icons.home),
             ),
             BottomNavigationBarItem(
-                label: 'Settings', icon: Icon(Icons.settings))
+              label: 'Settings',
+              icon: Icon(Icons.settings),
+            )
           ],
         ),
       ),
