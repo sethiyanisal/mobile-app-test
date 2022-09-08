@@ -24,34 +24,36 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Ceylonese'),
         ),
         body: Center(
-          child: Container(
-            color: Colors.red,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.orange,
+          child: currentIndex == 0
+              ? Container(
+                  color: Colors.red,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orange,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            buttonName = 'Logged In';
+                          });
+                        },
+                        child: Text(buttonName),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            buttonName = 'Logged In';
+                          });
+                        },
+                        child: Text(buttonName),
+                      ),
+                    ],
                   ),
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'Logged In';
-                    });
-                  },
-                  child: Text(buttonName),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'Logged In';
-                    });
-                  },
-                  child: Text(buttonName),
-                ),
-              ],
-            ),
-          ),
+                )
+              : const SizedBox(),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
