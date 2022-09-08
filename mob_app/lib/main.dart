@@ -24,13 +24,16 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Ceylonese'),
         ),
         body: Center(
-          child: SizedBox(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.end,
+          child: Container(
+            color: Colors.red,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.orange,
+                  ),
                   onPressed: () {
                     setState(() {
                       buttonName = 'Logged In';
