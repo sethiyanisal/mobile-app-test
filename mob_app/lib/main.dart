@@ -25,10 +25,10 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: SizedBox(
-            width: 400,
+            width: double.infinity,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 ElevatedButton(
                   onPressed: () {
