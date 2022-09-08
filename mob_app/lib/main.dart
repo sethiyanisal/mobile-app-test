@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                 )
-              : const SizedBox(),
+              : Image.asset('images/beach.jpg'),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
