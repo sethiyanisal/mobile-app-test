@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,6 +31,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isClicked = false;
   String buttonName1 = 'Login';
   String buttonName2 = 'Next Page';
   int currentIndex = 0;
@@ -72,7 +75,19 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               )
-            : Image.asset('images/beach.jpg'),
+            : GestureDetector(
+                onTap: () {
+                  setState(
+                    () {
+                      isClicked = !isClicked;
+                    },
+                  );
+                },
+                child: isClicked
+                    ? Image.asset('images/beach.jpg')
+                    : Image.network(
+                        'https://www.traveldailymedia.com/assets/2019/06/lanka.jpg'),
+              ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
